@@ -1,0 +1,67 @@
+@use '../_utils/mixins.scss' as *;
+
+.desktop {
+  display: none;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1 / 1.5;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    row-gap: 20px;
+  }
+
+  &__content h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -0.64px;
+    font-weight: 600;
+  }
+
+  &__control ul {
+    display: flex;
+    column-gap: 5px;
+
+    li {
+      width: 15px;
+      height: 5px;
+      // background-color: rgb(#ffffff, 0.6);
+      background-color: #fff;
+      opacity: 0.6;
+      border-radius: 2.5px;
+      cursor: pointer;
+    }
+
+    .active {
+      opacity: 1;
+    }
+  }
+}
+
+.activeBg1 {
+  transition: all ease-in-out 1.3s;
+  background: url('../../img/bg2.jpg')no-repeat center/cover;
+}
+
+.activeBg2 {
+  transition: all ease-in-out 1.3s;
+  background: url('../../img/bg1.jpg')no-repeat center/cover;
+}
+
+.activeBg3 {
+  transition: all ease-in-out 1.3s;
+  background: url('../../img/bg3.jpg')no-repeat center/cover;
+}
+
+@include onDekstop {
+  .desktop {
+    display: block;
+  }
+}

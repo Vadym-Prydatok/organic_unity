@@ -1,0 +1,41 @@
+.header {
+  grid-area: 1 / 1 / 2 / 2;
+  // margin-bottom: 110px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 8px;
+    align-items: center;
+  }
+
+  &__logo span {
+    font-size: 30px;
+    line-height: 44px;
+    letter-spacing: -0.64px;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+  }
+
+  &__cart {
+    background-color: rgba(#4eb49c, 0.25);
+    border: 1px solid #00000025;
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+  }
+
+  &__link img {
+    width: 32px;
+    height: 32px;
+    opacity: 1.75;
+  }
+}

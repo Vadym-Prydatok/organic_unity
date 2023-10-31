@@ -1,0 +1,32 @@
+@mixin active-animation {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: black;
+  bottom: -1px;
+
+  animation: active-link 0.3s forwards;
+
+  @keyframes active-link {
+    from {
+      transform: scale(0);
+    }
+
+    to {
+      transform: scale(1);
+    }
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDekstop {
+  @media (min-width: 1020px) {
+    @content;
+  }
+}

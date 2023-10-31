@@ -1,0 +1,13 @@
+@use "../_utils/_vars.scss" as *;
+
+.terms {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 24px;
+  align-items: end;
+  grid-area: 3 / 1 / 4 / 2;
+
+  a {
+    color: $secondaryColor;
+  }
+}

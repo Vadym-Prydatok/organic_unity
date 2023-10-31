@@ -1,0 +1,19 @@
+@use '../_utils/mixins.scss' as *;
+
+.mobile {
+  height: 100%;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    height: 100%;
+    row-gap: 40px;
+  }
+}
+
+@include onDekstop {
+  .mobile {
+    width: 100%;
+  }
+}

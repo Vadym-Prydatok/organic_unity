@@ -1,0 +1,13 @@
+@use './_utils/_vars.scss' as *;
+
+body {
+  font-family: "Inter", sans-serif;
+  color: $mainColor;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 40px 50px 25px;
+  margin: 0 auto;
+  height: 100%;
+}

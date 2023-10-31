@@ -1,0 +1,25 @@
+@use "../_utils/_vars.scss" as *;
+
+.content {
+  grid-area: 2 / 1 / 3 / 2;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 30px;
+    line-height: 44px;
+    letter-spacing: -0.64px;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    margin-bottom: 34px;
+  }
+
+  &__title span {
+    color: $secondaryColor;
+  }
+}

@@ -1,0 +1,198 @@
+@use "./style/_utils/_vars.scss" as *;
+@use "./style/_utils/mixins.scss" as *;
+@import url(./style/common.scss);
+@import url(./style/_utils/_reset.scss);
+@import url(./style/_utils/_fonts.scss);
+@import url(./style//blocks/content.scss);
+@import url(./style//blocks/header.scss);
+@import url(./style/blocks/dekstop.scss);
+@import url(./style/blocks/mobile.scss);
+@import url(./style/blocks/terms.scss);
+
+.SignInForm {
+  width: 385px;
+  grid-area: 2 / 1 / 3 / 2;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: 1.34px;
+    text-align: left;
+    margin-bottom: 46px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+
+    > input {
+      font-family: "InterS", sans-serif;
+      font-weight: 600;
+      width: 100%;
+      height: 60px;
+      border: 2px solid $mainColor;
+      border-radius: 6px;
+      padding: 13px 20px;
+      font-size: 18px;
+      line-height: 34px;
+      letter-spacing: -0.33px;
+
+      &:focus {
+        border: 2px solid $secondaryColor;
+      }
+    }
+  }
+
+  &__setting {
+    font-weight: 400;
+    font-size: 18px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+      display: flex;
+      align-items: center;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+      height: 26px;
+      width: 26px;
+    }
+  }
+
+  &__button {
+    font-family: "InterS", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 34px;
+    letter-spacing: -0.33px;
+    color: #fff;
+    border-radius: 6px;
+    background-color: $mainColor;
+    height: 64px;
+    width: 100%;
+  }
+
+  &__button:hover {
+    background-color: $secondaryColor;
+  }
+
+  &__info {
+    text-align: left;
+    font-size: 20px;
+    line-height: 34px;
+    letter-spacing: -0.33px;
+
+    a {
+      font-family: "InterS", sans-serif;
+      color: $secondaryColor;
+      font-weight: 600;
+    }
+  }
+}
+
+.login {
+  height: 100vh;
+}
+
+.signUp {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  &__back-btn {
+    align-self: flex-start;
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
+    line-height: 44px;
+    letter-spacing: -0.64px;
+    font-weight: 700;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+
+    > input {
+      font-family: "InterS", sans-serif;
+      font-weight: 600;
+      width: 100%;
+      height: 60px;
+      border: 2px solid $mainColor;
+      border-radius: 6px;
+      padding: 13px 20px;
+      font-size: 18px;
+      line-height: 34px;
+      letter-spacing: -0.33px;
+
+      &:focus {
+        border: 2px solid $secondaryColor;
+      }
+    }
+  }
+
+  &__button {
+    width: 384px;
+    font-family: "InterS", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 34px;
+    letter-spacing: -0.33px;
+    color: #fff;
+    border-radius: 6px;
+    background-color: $mainColor;
+    height: 64px;
+  }
+
+  &__button:hover {
+    background-color: $secondaryColor;
+  }
+
+  &__back-btn {
+    font-family: "InterS", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 34px;
+    letter-spacing: -0.33px;
+    color: #fff;
+    width: 150px;
+    background-color: $mainColor;
+    border-radius: 6px;
+  }
+
+  &__back-btn:hover {
+    background-color: $secondaryColor;
+  }
+}
+
+@include onDekstop {
+  .login {
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
