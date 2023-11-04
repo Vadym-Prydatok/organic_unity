@@ -1,4 +1,3 @@
-import { FC } from "react";
 import '../style/blocks/animateButton.scss'
 
 export const AnimateButton = () => {
@@ -12,7 +11,6 @@ export const AnimateButton = () => {
           style={{
             shapeRendering: "geometricPrecision",
             textRendering: "geometricPrecision",
-            imageRendering: "optimizeQuality" as const,
             fillRule: "evenodd",
             clipRule: "evenodd",
           }}
@@ -39,7 +37,6 @@ export const AnimateButton = () => {
           style={{
             shapeRendering: "geometricPrecision",
             textRendering: "geometricPrecision",
-            imageRendering: "optimizeQuality",
             fillRule: "evenodd",
             clipRule: "evenodd",
           }}
@@ -65,7 +62,6 @@ export const AnimateButton = () => {
           style={{
             shapeRendering: "geometricPrecision",
             textRendering: "geometricPrecision",
-            imageRendering: "optimizeQuality" as const,
             fillRule: "evenodd",
             clipRule: "evenodd",
           }}
