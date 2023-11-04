@@ -1,0 +1,47 @@
+@use '../_utils/vars' as *;
+
+.message {
+  font-size: 20px;
+  background-color: rgba(#4eb49c, 0.9);
+  position: fixed;
+  color: #fff;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  border-radius: 14px;
+  padding: 2px 10px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  max-width: 400px;
+
+  box-shadow: 1px 23px 39px -12px rgba(0,0,0,0.38);
+  -webkit-box-shadow: 1px 23px 39px -12px rgba(0,0,0,0.38);
+  -moz-box-shadow: 1px 23px 39px -12px rgba(0,0,0,0.38);
+
+  button {
+    color: $mainColor;
+    font-weight: 800;
+    align-self: flex-end;
+  }
+
+  button:hover {
+    color: red;
+  }
+
+  &.visible {
+    opacity: 1;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

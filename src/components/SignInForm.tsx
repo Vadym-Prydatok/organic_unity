@@ -3,6 +3,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router";
 import { setUser } from "../store/slices/userSlice";
 import { useAppDispatch } from "../store/store";
+import { addMessages, setIsloading } from "../store/slices/messageSlice";
 
 export const SignInForm = () => {
   const [email, setEmail] = useState("");
@@ -16,12 +17,11 @@ export const SignInForm = () => {
     password: string
   ) => {
     e.preventDefault();
-
+    dispatch(setIsloading(true));
     const auth = getAuth();
 
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
-        console.log(user);
         dispatch(
           setUser({
             name: user.displayName,
@@ -31,9 +31,13 @@ export const SignInForm = () => {
           })
         );
 
+        dispatch(addMessages(`Welcome back ${user.displayName}!`));
         navigate("/");
       })
-      .catch(console.error);
+      .catch((err) => {
+        dispatch(addMessages(err.message));
+      })
+      .finally(() => dispatch(setIsloading(false)));
   };
 
   return (

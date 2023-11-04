@@ -16,6 +16,7 @@ export const LoginPage: React.FC = () => {
 
     return () => clearInterval(interval);
   }, [activeBg]);
+
   return (
     <div className="login">
       <section className="mobile">
@@ -58,8 +59,8 @@ export const LoginPage: React.FC = () => {
         <div className="container">
           <div className="desktop__inner">
             <div className="desktop__content">
-              <h1>“Save the Planet...Buy Organic”</h1>
-              <p>― Nancy Philips</p>
+              <h1>“Save the Earth... Go Organic!”</h1>
+              <p>― Max Wintersol</p>
             </div>
 
             <div className="desktop__control">

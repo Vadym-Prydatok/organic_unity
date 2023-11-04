@@ -1,8 +1,13 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 import { useState } from "react";
 import { useAppDispatch } from "../store/store";
 import { setUser } from "../store/slices/userSlice";
 import { useNavigate } from "react-router";
+import { addMessages, setIsloading } from "../store/slices/messageSlice";
 
 export const SignUpForm = () => {
   const [name, setName] = useState("");
@@ -13,25 +18,34 @@ export const SignUpForm = () => {
 
   const handleLogin = (email: string, password: string) => {
     const auth = getAuth();
-
-    console.log(auth);
+    dispatch(setIsloading(true));
 
     createUserWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
-        console.log(user);
-        dispatch(
-          setUser({
-            name: user.displayName,
-            email: user.email,
-            id: user.uid,
-            token: user.refreshToken,
-          })
-        );
+        updateProfile(user, { displayName: name })
+          .then(() => {
+            dispatch(
+              setUser({
+                name: user.displayName,
+                email: user.email,
+                id: user.uid,
+                token: user.refreshToken,
+              })
+            );
 
-        navigate("/");
+            dispatch(addMessages(`Success, Hello ${user.displayName}!`));
+            navigate("/");
+          })
+          .catch((err) => {
+            dispatch(addMessages(err.message));
+          });
       })
-      .catch(console.error);
+      .catch((err) => {
+        dispatch(addMessages(err.message));
+      })
+      .finally(() => dispatch(setIsloading(false)));
   };
+
   return (
     <div className="signUp__form">
       <input
@@ -52,7 +66,12 @@ export const SignUpForm = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button className="signUp__button" onClick={() => handleLogin(email, password)}>Sign Up</button>
+      <button
+        className="signUp__button"
+        onClick={() => handleLogin(email, password)}
+      >
+        Sign Up
+      </button>
     </div>
   );
 };

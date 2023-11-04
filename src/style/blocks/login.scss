@@ -1,0 +1,13 @@
+@use '../_utils/mixins.scss' as *;
+
+.login {
+  height: 100vh;
+}
+
+@include onDekstop {
+  .login {
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
