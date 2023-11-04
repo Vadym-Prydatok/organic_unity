@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { initializeApp } from "firebase/app";
 
 console.log(process.env);
@@ -12,4 +11,4 @@ const firebaseConfig = {
   appId: process.env.VITE_API_FIREBASE_APP_ID,
 };
 
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
