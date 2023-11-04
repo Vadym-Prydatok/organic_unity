@@ -15,8 +15,6 @@ export const Message = () => {
     return () => clearTimeout(messageTimer);
   }, [messages]);
 
-  console.log(messages);
-
   return (
     <div className={classNames('message', { visible: messages.length > 0})}>
       <button onClick={() => dispatch(setMessages([]))}>X</button>

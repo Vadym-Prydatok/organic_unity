@@ -8,10 +8,7 @@ export const Home = () => {
   const { name } = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
   const isAuth = useAuth();
-  // const navigate = useNavigate();
 
-  console.log(isAuth);
-  console.log(isAuth);
 
   if (!isAuth) {
     return <Navigate to="/login" />;

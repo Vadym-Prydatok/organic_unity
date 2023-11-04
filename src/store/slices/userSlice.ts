@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-
 interface UserState {
   name: string | null;
   email: string | null;
@@ -9,10 +8,10 @@ interface UserState {
 
 const initialState: UserState = {
   name: null,
-  email: null, 
-  token: null, 
-  id: null, 
-}
+  email: null,
+  token: null,
+  id: null,
+};
 
 const userSlice = createSlice({
   name: "user",
@@ -36,4 +35,3 @@ const userSlice = createSlice({
 export const { setUser, clearUser } = userSlice.actions;
 
 export default userSlice.reducer;
-

@@ -19,6 +19,7 @@ const messageSlice = createSlice({
     },
 
     addMessages(state, action) {
+      if (state.messages.length > 5) state.messages.shift();
       state.messages.push(action.payload);
     },
     

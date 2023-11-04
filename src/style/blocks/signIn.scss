@@ -63,6 +63,10 @@
       height: 26px;
       width: 26px;
     }
+
+    button:hover {
+      color: $secondaryColor;
+    }
   }
 
   &__button {

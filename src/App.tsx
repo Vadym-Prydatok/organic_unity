@@ -17,8 +17,8 @@ function App() {
       <SwitchTransition>
         <CSSTransition
           key={location.key}
-          classNames={'zoom'}
-          timeout={900}
+          classNames={'fade'}
+          timeout={300}
           unmountOnExit
         >
           <Routes location={location}>

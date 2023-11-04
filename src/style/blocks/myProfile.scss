@@ -1,0 +1,99 @@
+@use '../_utils/vars' as *;
+
+.myProfile {
+  &__info {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    &-item:nth-child(2) {
+      margin-bottom: 20px;
+      color: $secondaryColor;
+    }
+
+    &-item:last-child {
+      color: $secondaryColor;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10px;
+    margin-bottom: 40px;
+  }
+
+  &__update {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+    > input {
+      font-family: "InterS", sans-serif;
+      font-weight: 600;
+      width: 100%;
+      height: 60px;
+      border: 2px solid $mainColor;
+      border-radius: 6px;
+      padding: 13px 20px;
+      font-size: 18px;
+      line-height: 34px;
+      letter-spacing: -0.33px;
+
+      &:focus {
+        border: 2px solid $secondaryColor;
+      }
+    }
+
+    &-control {
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  &__button {
+    min-width: 100px;
+    width: 100%;
+    font-family: "InterS", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 34px;
+    letter-spacing: -0.33px;
+    color: #fff;
+    border-radius: 6px;
+    background-color: $mainColor;
+    height: 44px;
+  }
+
+  &__button:hover {
+    background-color: $secondaryColor;
+  }
+}
+
+.hide {
+  display: none;
+}

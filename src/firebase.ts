@@ -1,7 +1,5 @@
 import { initializeApp } from "firebase/app";
 
-console.log(process.env);
-
 const firebaseConfig = {
   apiKey: 'AIzaSyCAtRzos__u-w8JENG_11u-hWHdiGYmiJg',
   authDomain: 'authorganicunity.firebaseapp.com',

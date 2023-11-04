@@ -8,6 +8,8 @@ import { addMessages, setIsloading } from "../store/slices/messageSlice";
 export const SignInForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -60,11 +62,20 @@ export const SignInForm = () => {
 
           <div className="SignInForm__setting">
             <div>
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+              />
               <span>Remember me</span>
             </div>
 
-            <a href="#">Forget Password?</a>
+            <button
+              type="button"
+              onClick={() =>
+                dispatch(addMessages("Please contact support@gmail.com"))
+              }
+            >
+              Forget Password?
+            </button>
           </div>
 
           <button

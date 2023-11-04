@@ -1,11 +1,11 @@
 @use '../_utils/mixins.scss' as *;
+@use '../_utils/vars.scss' as *;
 
 .desktop {
   display: none;
   color: #fff;
   height: 100%;
   width: 100%;
-  // aspect-ratio: 1 / 1.5;
 
   &__inner {
     display: flex;
@@ -32,11 +32,14 @@
     li {
       width: 15px;
       height: 5px;
-      // background-color: rgb(#ffffff, 0.6);
       background-color: #fff;
       opacity: 0.6;
       border-radius: 2.5px;
       cursor: pointer;
+    }
+
+    li:hover {
+      background-color: $secondaryColor;
     }
 
     .active {
