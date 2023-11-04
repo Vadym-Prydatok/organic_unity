@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 console.log(process.env);
 
 const firebaseConfig = {
-  apiKey: process.env.VITE_API_FIREBASE_API_KEY,
-  authDomain: process.env.VITE_API_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.VITE_API_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.VITE_API_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.VITE_API_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.VITE_API_FIREBASE_APP_ID,
+  apiKey: 'AIzaSyCAtRzos__u-w8JENG_11u-hWHdiGYmiJg',
+  authDomain: 'authorganicunity.firebaseapp.com',
+  projectId: 'authorganicunity',
+  storageBucket: 'authorganicunity.appspot.com',
+  messagingSenderId: '343053657367',
+  appId: '1:343053657367:web:82e55fd71ad766db510352',
 };
 
 export const app = initializeApp(firebaseConfig);
